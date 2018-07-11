@@ -6,6 +6,8 @@
   "scripts": {
     "ts-node": "ts-node src/index.ts",
     "build:tsc": "tsc src/index.ts --outDir build",
+    "build:tsc-watch": "tsc src/index.ts --outDir build --watch",
+    "build:ts-watch": "./node_modules/.bin/tsc-watch src/index.ts --outDir build --onSuccess \"node ./dev/success.js\" --onFailure \"node ./dev/error.js\"",
     "build:wp": "webpack --hide-modules --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,12 +15,22 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "chalk": "^2.4.1"
+    "@types/lodash": "^4.14.110",
+    "cd-messenger": "^2.7.26",
+    "chalk": "^2.4.1",
+    "lodash": "^4.17.10"
   },
   "devDependencies": {
+    "@types/chalk": "^2.2.0",
     "@types/node": "^10.5.1",
+    "awesome-typescript-loader": "^5.2.0",
+    "babel-loader": "^7.1.4",
+    "debug-loader": "0.0.1",
+    "node-notifier": "^5.2.1",
     "ts-loader": "^4.4.2",
     "ts-node": "^7.0.0",
+    "tsc-watch": "^1.0.22",
+    "tslint": "^5.10.0",
     "typescript": "^2.9.2",
     "webpack": "^4.14.0",
     "webpack-cli": "^3.0.8"

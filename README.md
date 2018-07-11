@@ -4,37 +4,36 @@ I have found using `ts-loader` with webpack does not produce correct results, ho
 
 Please test using following scenarios
 
-
-### Using ts-node
+## Using ts-node
 
 - npm run ts-node
 - chalk output is correct
 
-### Using build:tsc
+## Using build:tsc
 
 - npm run build:tsc
 - node build/index.js
 - chalk output is correct
 
-### Using build:wp
+## Using build:wp
 
 - npm run build:wp
 - node build/bundle.js
 - chalk output is incorrect (no colors)
 
-### Bonus Material
+## Bonus Material
 
 I have also found, the only way I can get chalk working is to use `require`
 If I change to
 
-```
+```javascript
 // const chalk = require('chalk')
 import * as chalk from 'chalk'
 ```
 
 it produces a series of errors and warnings
 
-```
+```bash
 WARNING in ./src/index.ts 4:12-19
 Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
 

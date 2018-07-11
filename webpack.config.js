@@ -3,6 +3,7 @@ var path = require('path');
 module.exports = {
     entry: './src/index.ts',
     devtool: 'inline-source-map',
+    target: 'node',
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'bundle.js'
@@ -11,7 +12,7 @@ module.exports = {
         rules: [
             {
                 use: 'ts-loader',
-                test: /\.ts?$/
+                test: /\.ts?$/,
             }
         ]
     }
